@@ -9,6 +9,10 @@ const navItems = [
     path: '/joe',
     label: 'Secret Club',
   },
+  {
+    path: '/blog',
+    label: 'Blog',
+  },
 ];
 const Header = () => {
     return (
