@@ -1,22 +1,25 @@
 import Head from 'next/head';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import SinglePost from '../../components/SinglePost';
 import { getPostSlugs, getPostData } from '../../utils/posts';
+
 
 const BlogPost = ({ postData }) => {
 return (
-    <>
-      <Head>
-        <title>{postData.postTitle} // UP Boutique</title>
-      </Head>
-      <div className='page-wrapper'>
-        <Header />
-        <main>
-          <pre>{JSON.stringify(postData, null, 2)}</pre>
-        </main>
-        <Footer />
-      </div>
-    </>
+  <>
+  <Head>
+    <title>{postData.postTitle} // UP Boutique</title>
+  </Head>
+  <div className='page-wrapper'>
+    <Header bgImage={postData.featuredImage} />
+    <main>
+      <SinglePost post={postData} />
+    </main>
+    <Footer />
+  </div>
+</>
+
   );
 };
 

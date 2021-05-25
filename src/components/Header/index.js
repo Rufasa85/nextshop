@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import styles from "./header.module.css"
+import { useRouter } from 'next/router';
 
 const navItems = [
   {
@@ -14,23 +16,32 @@ const navItems = [
     label: 'Blog',
   },
 ];
-const Header = () => {
+const Header = ({bgImage}) => {
+  const router = useRouter();
     return (
-      <header>
-        <div>
-          <Link href='/'>
-            <a>UP</a>
-          </Link>
-  
-          <nav>
-            {navItems.map(({ path, label }) => (
-              <Link key={path} href={path}>
-                <a>{label}</a>
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </header>
+      <header className={styles.header} style={bgImage && {backgroundImage:`url(${bgImage})`}}>
+      <div className={styles['header-wrapper']}>
+        <Link href='/'>
+          <a className={styles['header-logo']}>UP</a>
+        </Link>
+    
+        <nav className={styles['header-nav']}>
+          {navItems.map(({ path, label }) => (
+           <Link key={path} href={path}>
+           <a
+             className={`${styles['header-link']} ${
+               router && router.pathname.includes(path)
+                 ? styles['header-link-active']
+                 : ''
+             }`}
+           >
+             {label}
+           </a>
+         </Link>
+          ))}
+        </nav>
+      </div>
+    </header>
     );
   };
   
