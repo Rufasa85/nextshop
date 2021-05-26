@@ -4,6 +4,6 @@ module.exports = {
       dist: 'out_publish',
     },
     images:{
-      domains:["media.graphcms.com"]
+      domains:["media.graphcms.com","www.horseninja.ninja"]
     }
   };
