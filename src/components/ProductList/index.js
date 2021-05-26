@@ -12,7 +12,7 @@ const ProductList = ({ products = [] }) => {
             <div key={id} className={styles['product-item']}>
               <Link href={`/products/${slug}`}>
                 <div className={styles['product-image-wrapper']}>
-                  <Image
+                  <img
                     className={styles['product-image']}
                     src={productImage.url}
                     alt={`Featured image for ${productName}`}
