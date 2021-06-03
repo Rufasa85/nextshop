@@ -15,7 +15,7 @@ const Product = ({ productData }) => {
   return (
     <>
       <Head>
-        <title>{productData.productName} // UP Boutique</title>
+        <title>{productData.productName} // UP Boutique!</title>
       </Head>
       <div className='page-wrapper'>
         <Header bgImage={productData.productImage.url} />
